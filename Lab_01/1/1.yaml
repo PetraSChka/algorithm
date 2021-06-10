@@ -1,0 +1,8 @@
+name: repeat 0 1
+source code: "input: '1λ10101'\r\nblank: ' '\r\nstart state: q0\r\n\r\ntable:\r\n  q0:\r\n    [1,0,λ]: {R: q01}\r\n  q01:\r\n    [1,0,λ]: {R: q02}\r\n  q02:\r\n    [1,0,λ]: {R: q1}\r\n  q1:\r\n    1: {write: 0, R}\r\n    0: {write: 1, R}\r\n    λ : {write: 1, L: qz}\r\n  qz:"
+positions:
+  q0: {x: 325.04, y: 398.82, fixed: false}
+  q01: {x: 320.1, y: 259.1, fixed: false}
+  q02: {x: 376.61, y: 130.34, fixed: false}
+  q1: {x: 489.98, y: 217.06, fixed: false}
+  qz: {x: 627.33, y: 273.74}

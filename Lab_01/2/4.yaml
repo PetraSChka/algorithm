@@ -1,0 +1,5 @@
+name: repeat 0 1
+source code: "input: '11001'\r\nblank: ' '\r\nstart state: q1\r\n\r\ntable:\r\n  q1:\r\n    1: {write: 1, R: q1}\r\n    0: {write: 0, R: q1}\r\n    ' ' : {write: '0', L: q2}\r\n  q2:\r\n    1: {write: 1, L: q2}\r\n    0: {write: 0, L: q2}\r\n    \r\n    \r\n    "
+positions:
+  q1: {x: 376.57, y: 315.71, fixed: false}
+  q2: {x: 423.37, y: 184.26, fixed: false}

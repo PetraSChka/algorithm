@@ -1,0 +1,14 @@
+name: repeat 0 1
+source code: "input: 'acbdcabda'\r\nblank: ' '\r\nstart state: q1\r\n\r\ntable:\r\n  q1:\r\n    c: {write: c, L: q2}\r\n    a: {write: a, R}\r\n    d: {write: d, R}\r\n    b: {write: b, R}\r\n    f: {write: f, R}\r\n    \r\n  q2:\r\n    a: {write: a, L}\r\n    d: {write: d, L}\r\n    b: {write: b, L}\r\n    f: {write: f, L}\r\n    c: {write: c, L}\r\n    ' ': {write: ' ', R: q3}\r\n    \r\n  q3:\r\n    c: {write: c, L: q4}\r\n    a: {write: a, L: q5}\r\n    d: {write: d, L: q6}\r\n    b: {write: b, L: q7}\r\n    f: {write: f, R: q8}\r\n    ' ': {write: ' ', R: q2}\r\n\r\n  q4:\r\n    ' ': {write: c, R}\r\n    c: {write: c, R: check}\r\n  \r\n  q4c:\r\n    ' ': {write: c, R}\r\n    c: {write: f, R: q1}\r\n    \r\n  check:\r\n    f: {write: f, L: q9}\r\n    c: {write: c, L: q4c}\r\n    a: {write: a, L: q4c}\r\n    d: {write: d, L: q4c}\r\n    b: {write: b, L: q4c}\r\n      \r\n  q5:\r\n    ' ': {write: a, R}\r\n    a: {write: ' ', R: q3}\r\n  \r\n  q6:\r\n    ' ': {write: d, R}\r\n    d: {write: ' ', R: q3}\r\n\r\n  q7:\r\n    ' ': {write: b, R}\r\n    b: {write: ' ', R: q3}\r\n    \r\n  q8:\r\n    ' ': {write: f, R}\r\n    f: {write: ' ', R: q3}\r\n  \r\n  q9:\r\n    c: {write: ' ', R}\r\n    f: {write: f, L: q8}\r\n    a: {write: a, L: q8}\r\n    d: {write: d, L: q8}\r\n    b: {write: b, L: q8}\r\n    "
+positions:
+  q1: {x: 215.98, y: 380.64, fixed: false}
+  q2: {x: 360.01, y: 384.94, fixed: false}
+  q3: {x: 464.83, y: 286.22}
+  q4: {x: 442.69, y: 141.32, fixed: false}
+  q4c: {x: 180.22, y: 239.76, fixed: false}
+  check: {x: 286.84, y: 137.5, fixed: false}
+  q5: {x: 583.55, y: 204.89, fixed: false}
+  q6: {x: 596.76, y: 341.58, fixed: false}
+  q7: {x: 486.08, y: 428.19, fixed: false}
+  q8: {x: 371.54, y: 178.76, fixed: false}
+  q9: {x: 376.79, y: 29.14, fixed: false}

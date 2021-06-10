@@ -1,0 +1,11 @@
+name: repeat 0 1
+source code: "input: '1λ10101λ01λ'\r\nblank: ' '\r\nstart state: q0\r\n\r\ntable:\r\n  q0:\r\n    [1,0,λ]: {R: q01}\r\n  q01:\r\n    [1,0,λ]: {R: q02}\r\n  q02:\r\n    [1,0,λ]: {R: q03}\r\n  q03:\r\n    [1,0,λ]: {R: q1}\r\n  q1:\r\n    1: {write: λ, R}\r\n    0: {write: 1, R}\r\n    λ : {write: 1, R: q2}\r\n  q2:\r\n    1: {write: 1, R: q3}\r\n    0: {write: 0, R: q3}\r\n    λ : {write: λ, R: q3}\r\n  q3:\r\n    1: {write: λ, R: q4}\r\n    0: {write: 1, R: q4}\r\n    λ : {write: λ, R: q4}\r\n  q4:\r\n    1: {write: λ, L: q4}\r\n    0: {write: 1, L: q1}\r\n    λ : {write: λ, R: q2}\r\n  "
+positions:
+  q0: {x: 584.07, y: 236.52, fixed: false}
+  q01: {x: 513.21, y: 112.93, fixed: false}
+  q02: {x: 374.74, y: 79.15, fixed: false}
+  q03: {x: 256.92, y: 160.67, fixed: false}
+  q1: {x: 239.1, y: 302.89, fixed: false}
+  q2: {x: 382.2, y: 294.16, fixed: false}
+  q3: {x: 462.67, y: 411.06, fixed: false}
+  q4: {x: 319.46, y: 421.31, fixed: false}

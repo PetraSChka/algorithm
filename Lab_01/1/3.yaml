@@ -1,0 +1,5 @@
+name: repeat 0 1
+source code: "input: 'cabdcabda'\r\nblank: ' '\r\nstart state: q1\r\n\r\ntable:\r\n  q1:\r\n    c: {write: c, R: q2}\r\n    a: {write: a, R}\r\n    d: {write: d, R}\r\n    b: {write: b, R}\r\n    f: {write: f, R}\r\n  q2:\r\n    c: {write: f, R: q1}\r\n    a: {write: f, R: q1}\r\n    d: {write: f, R: q1}\r\n    b: {write: f, R: q1}\r\n    f: {write: f, R: q1}\r\n    "
+positions:
+  q1: {x: 331.78, y: 252.46, fixed: false}
+  q2: {x: 471.44, y: 247.42, fixed: false}
